@@ -1,0 +1,19 @@
+{
+  "name": "cowin-tracker",
+  "version": "1.0.0",
+  "description": "Check vaccination slot available for my age group in my city area",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vaccine",
+    "covid-19"
+  ],
+  "author": "Vinod Nimbalkar",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "yargs": "^17.0.0"
+  }
+}
