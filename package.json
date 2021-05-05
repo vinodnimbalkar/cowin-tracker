@@ -1,7 +1,7 @@
 {
   "name": "cowin-tracker",
   "version": "1.0.0",
-  "description": "Check vaccination slot available for my age group in my city area",
+  "description": "Check your nearest vaccination center and slots availability for your age group from your terminal.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,10 @@
     "covid-19"
   ],
   "author": "Vinod Nimbalkar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinodnimbalkar/cowin-tracker.git"
+  },
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
