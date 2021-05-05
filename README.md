@@ -30,7 +30,7 @@ MCW Kanchan Puri PHC 42141,Ansari Road, Daryaganj, Delhi 110002, 110002, Central
 
 ### How do I run locally
 
-- Close this repository `git clone https://github.com/vinodnimbalkar/cowin-tracker.git`
+- Clone this repository `git clone https://github.com/vinodnimbalkar/cowin-tracker.git`
 - `cd cowin-tracker`
 - Install dependencies `npm i`
 - `node index.js check --pincode 110001 --age 25` OR `node index.js check -p 110001 -a 25`
