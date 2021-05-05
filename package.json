@@ -2,10 +2,16 @@
   "name": "cowin-tracker",
   "version": "1.0.0",
   "description": "Check vaccination slot available for my age group in my city area",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "cowin-tracker": "src/index.js"
+  },
+  "files": [
+    "src/index.js"
+  ],
   "keywords": [
     "vaccine",
     "covid-19"
@@ -14,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
+    "chalk": "^4.1.1",
     "yargs": "^17.0.0"
   }
 }
