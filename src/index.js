@@ -62,7 +62,7 @@ async function getData(pincode) {
     pincode,
     date,
   };
-  const response = await axios.get(baseUrl, { params });
+  const response = await axios.get(baseUrl, { params, headers });
   const data = await response.data;
   return data;
 }
