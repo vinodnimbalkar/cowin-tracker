@@ -34,15 +34,30 @@ yargs.command({
       return;
     }
     if (typeof (argv.pincode === 'number')) {
-      getData(pincode).then((data) =>
-        console.log(getHumanReadableFormate(findCenters(data, age)))
-      );
+      getData(pincode)
+        .then((data) =>
+          console.log(getHumanReadableFormate(findCenters(data, age)))
+        )
+        .catch((e) =>
+          console.log(
+            `Something went wrong with status code ${e.response.status}\nPlease create issue at https://github.com/vinodnimbalkar/cowin-tracker`
+          )
+        );
     }
   },
 });
 
 async function getData(pincode) {
   const date = new Date().toLocaleDateString().replace('/', '-');
+  headers = {
+    'accept': 'application/json, text/plain',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+    'origin': 'https://www.cowin.gov.in',
+    'referer': 'https://www.cowin.gov.in/',
+    'user-agent':
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+  };
   params = {
     pincode,
     date,
@@ -106,7 +121,8 @@ function getHumanReadableFormate(centerData) {
     body.push('');
   });
   let countInfo = `Vaccine are avaible in ${count} centers \n`;
-  countInfo = count === 0 ? chalk.red(countInfo) : chalk.blue(countInfo);
+  let errorInfo = 'Sorry, vaccine not available at your area.';
+  countInfo = count === 0 ? chalk.red(errorInfo) : chalk.blue(countInfo);
 
   return `${countInfo} ${chalk.green(body.join('\n'))}`;
 }
